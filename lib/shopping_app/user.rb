@@ -5,11 +5,11 @@ class User
   include ItemManager
 
   attr_accessor :name
-  attr_reader :wallet
+  attr_reader :wallet 
 
   def initialize(name)
     @name = name
-    @wallet = Wallet.new(self) # UserインスタンスまたはUserを継承したクラスのインスタンスは生成されると、自身をオーナーとするウォレットを持ちます。
+    @wallet = Wallet.new(self) # UserインスタンスまたはUserを継承したクラスのインスタンスは生成されると、自身をオーナーとするウォレットを持ちます。#Wallet自体インスタンスかされる
   end
 
 end

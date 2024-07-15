@@ -3,7 +3,7 @@ require_relative "shopping_app/item"
 require_relative "shopping_app/customer"
 
 seller = Seller.new("DICストア")
-10.times{ Item.new(1, "CPU", 40830, seller) }
+10.times{ Item.new(1, "CPU", 40830, seller) } #sellerがオーナーを表す seller商店を作って、Itemインスタンスの配列ownerのところに入れる）
 10.times{ Item.new(2, "メモリー", 13880, seller) }
 10.times{ Item.new(3, "マザーボード", 28980, seller) }
 10.times{ Item.new(4, "電源ユニット", 8980, seller) }
@@ -15,11 +15,10 @@ seller = Seller.new("DICストア")
 10.times{ Item.new(10, "グラフィックボード", 23800, seller) }
 
 puts "🤖 あなたの名前を教えてください"
-customer = Customer.new(gets.chomp)
+customer = Customer.new(gets.chomp) #
 
 puts "🏧 ウォレットにチャージする金額を入力にしてください"
-customer.wallet.deposit(gets.chomp.to_i)
-
+customer.wallet.deposit(gets.chomp.to_i) #customerクラスの
 puts "🛍️ ショッピングを開始します"
 end_shopping = false
 while !end_shopping do
@@ -55,7 +54,6 @@ puts "😱👛 #{customer.name}のウォレット残高: #{customer.wallet.balan
 puts "📦 #{seller.name}の在庫状況"
 seller.items_list
 puts "😻👛 #{seller.name}のウォレット残高: #{seller.wallet.balance}"
-
 puts "🛒 カートの中身"
 customer.cart.items_list
 puts "🌚 合計金額: #{customer.cart.total_amount}"
